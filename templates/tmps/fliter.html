@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        [class*="col-"]{
+            background-color: snow;
+            text-align: justify-all;
+            font-size: 20px;
+            box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;
+            padding-top:10px;padding-bottom: 10px;
+        }
+        .row{
+            margin-bottom: 10px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+        <h1 class="text-center">过滤器的使用及自定义过滤器</h1>
+
+            <div class="row">
+                <div class="col-md-2">list</div>
+                <div class="col-md-3">{% templatetag openvariable %} list | join:"," {% templatetag closevariable  %}</div>
+                <div class="col-md-7">list = ["苹果","橘子","香蕉","西瓜"]  &nbsp;结果：{{ list|join:", " }}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">default</div>
+                <div class="col-md-3">{% templatetag openvariable %} value | default:"nothing" {% templatetag closevariable  %}</div>
+                <div class="col-md-7"><b>default过滤器</b>，为变量设置缺省值</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">add</div>
+                <div class="col-md-3">{% templatetag openvariable %} value|add:"2" {% templatetag closevariable  %}</div>
+                <div class="col-md-7">将value加上参数设定的值，例如value=4 ，则输出6。 也可以用于将一个列表append到另一个列表中</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">date</div>
+                <div class="col-md-3">{% templatetag openvariable %} value|date:"D d M Y" {% templatetag closevariable  %}</div>
+                <div class="col-md-7">格式化日期{{ nowtime|date:"Y m d D" }} </div>
+            </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
