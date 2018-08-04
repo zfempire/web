@@ -46,6 +46,14 @@
                 <div class="col-md-3">{% templatetag openvariable %} value|date:"D d M Y" {% templatetag closevariable  %}</div>
                 <div class="col-md-7">格式化日期{{ nowtime|date:"Y m d D" }} </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-12">{% load tmps_extras %}{{ value2|divAdd:"dog" }}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">{% show_results poll %}</div>
+            </div>
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>

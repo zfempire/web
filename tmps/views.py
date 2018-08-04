@@ -6,9 +6,16 @@ def fliter(req):
     default = None  # 该变量是一个空值
     value1= "Django"
     nowtime = datetime.datetime.now()
+    value2 = "cat"
+    poll = ["苹果","橘子","香蕉","西瓜"]
     return render(req,"fliter.html",{
                                         "list":lst,
                                         "Empty":default,
                                         "value1":value1,
-                                        "nowtime":nowtime
+                                        "nowtime":nowtime,
+                                        "value2":value2,
+                                        "poll":poll
     })
+
+def extend(req):
+    return render(req,"extend.html")
