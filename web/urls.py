@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-import tmps.urls
+import tmps.urls,iORM.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path("tmps/",include(tmps.urls)),
+    path("iorm/",include(iORM.urls)),
 ]
